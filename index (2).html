@@ -1,0 +1,39 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<title>Input Event Detection with Client-Side Log</title>
+</head>
+<body>
+	<h1>Input Event Detection with Client-Side Log</h1>
+	<div id="output">No input detected yet.</div>
+
+	<script>
+		// Get the output element
+		var output = document.getElementById("output");
+
+		// Detect mouse clicks
+		document.addEventListener("click", function(event) {
+			// Create a new div element with the event message and mouse button code, and append it to the output
+			var newLine = document.createElement('div');
+			newLine.textContent = "Mouse click detected. Button code: " + event.button;
+			output.appendChild(newLine);
+		});
+
+		// Detect keyboard input
+		document.addEventListener("keydown", function(event) {
+			// Create a new div element with the event message and key code, and append it to the output
+			var newLine = document.createElement('div');
+			newLine.textContent = "Keyboard input detected. Key code: " + event.keyCode;
+			output.appendChild(newLine);
+		});
+
+		// Detect touch events (for touchscreen devices)
+		document.addEventListener("touchstart", function() {
+			// Create a new div element with the event message, and append it to the output
+			var newLine = document.createElement('div');
+			newLine.textContent = "Touch event detected.";
+			output.appendChild(newLine);
+		});
+	</script>
+</body>
+</html>

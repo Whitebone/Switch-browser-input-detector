@@ -1,0 +1,1 @@
+# Switch-browser-input-detector
